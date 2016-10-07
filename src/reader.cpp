@@ -2877,10 +2877,12 @@ const wchar_t *reader_readline(int nchars) {
                     wcstring_list_t skip_list;
                     skip_list.push_back(data->command_line.text);
                     const wcstring &suggest = data->autosuggestion;
+                    /*  // I really like to get to the autosuggestion when cycling through history
                     if (!suggest.empty() && !data->screen.autosuggestion_is_truncated) {
                         // Also skip the autosuggestion in the history unless it was truncated.
                         skip_list.push_back(suggest);
                     }
+                    */
                     data->history_search.skip_matches(skip_list);
                 }
 
